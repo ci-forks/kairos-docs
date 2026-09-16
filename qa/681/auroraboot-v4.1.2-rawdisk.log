@@ -1,0 +1,105 @@
+[90m2026-09-16T05:09:04Z[0m DBG StepDumpSource: config arch and image [36march=[0m [36mimage=[0mdocker:quay.io/kairos/hadron:v0.4.0-core-amd64-generic-v4.1.2
+[90m2026-09-16T05:09:04Z[0m DBG 1.
+[90m2026-09-16T05:09:04Z[0m DBG  <prepare-dirs> (background: false)
+[90m2026-09-16T05:09:04Z[0m DBG
+[90m2026-09-16T05:09:04Z[0m DBG 2.
+[90m2026-09-16T05:09:04Z[0m DBG  <dump-source> (background: false)
+[90m2026-09-16T05:09:04Z[0m DBG  <copy-cloud-config> (background: false)
+[90m2026-09-16T05:09:04Z[0m DBG
+[90m2026-09-16T05:09:04Z[0m DBG 3.
+[90m2026-09-16T05:09:04Z[0m DBG  <gen-raw-bios-disk> (background: false)
+[90m2026-09-16T05:09:04Z[0m DBG
+[90m2026-09-16T05:09:04Z[0m DBG 4.
+[90m2026-09-16T05:09:04Z[0m DBG
+[90m2026-09-16T05:09:04Z[0m DBG 5.
+[90m2026-09-16T05:09:04Z[0m DBG
+[90m2026-09-16T05:09:04Z[0m DBG Preparing destination temporal directory [36mdestination=[0m/aurora
+[90m2026-09-16T05:09:04Z[0m DBG Preparing temp rootfs directory [36mdestination=[0m/tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31
+[90m2026-09-16T05:09:04Z[0m DBG Preparing temp netboot directory [36mdestination=[0m/aurora/netboot
+[90m2026-09-16T05:09:04Z[0m DBG DumpSource: arch parameter [36mallow-insecure-registries=[0mfalse [36march=[0m
+[90m2026-09-16T05:09:04Z[0m [32mINF[0m [1mCopying cloud config[0m [36mcloudConfig=[0m
+[90m2026-09-16T05:09:04Z[0m DBG DumpSource: config arch after NewConfig [36march=[0mx86_64
+[90m2026-09-16T05:09:04Z[0m DBG DumpSource: config platform is nil after NewConfig
+[90m2026-09-16T05:09:04Z[0m [32mINF[0m [1m[1] Copying quay.io/kairos/hadron:v0.4.0-core-amd64-generic-v4.1.2 source to /tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31[0m
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1m[1] Finished copying quay.io/kairos/hadron:v0.4.0-core-amd64-generic-v4.1.2 into /tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31[0m
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1mGenerating raw disk '/aurora' from '/tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31' with final size 0Mb[0m
+[90m2026-09-16T05:09:08Z[0m DBG Got output name [36mname=[0mkairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1mCreating RECOVERY image[0m
+[90m2026-09-16T05:09:08Z[0m DBG Kubernetes check [36mhostdir=[0m [36mstatus=[0mfalse
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1m[1] Creating file system image /tmp/auroraboot-raw-image-328531551/recovery/cOS/recovery.img with size 584MiB[0m
+[90m2026-09-16T05:09:08Z[0m DBG [1] Running cmd: 'mkfs.ext2 -L COS_SYSTEM /tmp/auroraboot-raw-image-328531551/recovery/cOS/recovery.img'
+[90m2026-09-16T05:09:08Z[0m DBG [1] Mounting image COS_SYSTEM
+[90m2026-09-16T05:09:08Z[0m DBG Opening img file [36mimage=[0m/tmp/auroraboot-raw-image-328531551/recovery/cOS/recovery.img
+[90m2026-09-16T05:09:08Z[0m DBG [1] Opening loop control device
+[90m2026-09-16T05:09:08Z[0m DBG [1] Getting free loop device
+[90m2026-09-16T05:09:08Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:08Z[0m DBG [1] Setting loop device
+[90m2026-09-16T05:09:08Z[0m DBG [1] Setting loop flags
+[90m2026-09-16T05:09:08Z[0m DBG Attached loop device [36mdevice=[0m/dev/loop0 [36mimage=[0m/tmp/auroraboot-raw-image-328531551/recovery/cOS/recovery.img [36mreadOnly=[0mfalse
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1m[1] Copying /tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31 source to /tmp/auroraboot-raw-image-328531551/recovery-img[0m
+[90m2026-09-16T05:09:08Z[0m [32mINF[0m [1m[1] Starting rsync...[0m
+[90m2026-09-16T05:09:08Z[0m DBG [1] Running cmd: 'rsync --progress --partial --human-readable --archive --acls --exclude=/mnt --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/tmp --exclude=/host --exclude=/run /tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31/ /tmp/auroraboot-raw-image-328531551/recovery-img/'
+[90m2026-09-16T05:09:09Z[0m [32mINF[0m [1m[1] Finished syncing[0m
+[90m2026-09-16T05:09:09Z[0m [32mINF[0m [1m[1] Finished copying /tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31 into /tmp/auroraboot-raw-image-328531551/recovery-img[0m
+[90m2026-09-16T05:09:09Z[0m DBG [1] Unmounting image COS_SYSTEM
+[90m2026-09-16T05:09:09Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:09Z[0m DBG [1] Clearing loop device
+[90m2026-09-16T05:09:09Z[0m DBG Copying grub.cfg [36msource=[0m/tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31 [36mtarget=[0m/tmp/auroraboot-raw-image-328531551/recovery/etc/cos
+[90m2026-09-16T05:09:09Z[0m [32mINF[0m [1m[1] Creating file system image /tmp/auroraboot-raw-image-328531551/recovery.img with size 1318MiB[0m
+[90m2026-09-16T05:09:09Z[0m DBG [1] Running cmd: 'mkfs.ext2 -L COS_RECOVERY /tmp/auroraboot-raw-image-328531551/recovery.img'
+[90m2026-09-16T05:09:09Z[0m DBG [1] Mounting image COS_RECOVERY
+[90m2026-09-16T05:09:09Z[0m DBG Opening img file [36mimage=[0m/tmp/auroraboot-raw-image-328531551/recovery.img
+[90m2026-09-16T05:09:09Z[0m DBG [1] Opening loop control device
+[90m2026-09-16T05:09:09Z[0m DBG [1] Getting free loop device
+[90m2026-09-16T05:09:09Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:09Z[0m DBG [1] Setting loop device
+[90m2026-09-16T05:09:09Z[0m DBG [1] Setting loop flags
+[90m2026-09-16T05:09:09Z[0m DBG Attached loop device [36mdevice=[0m/dev/loop0 [36mimage=[0m/tmp/auroraboot-raw-image-328531551/recovery.img [36mreadOnly=[0mfalse
+[90m2026-09-16T05:09:09Z[0m [32mINF[0m [1m[1] Copying /tmp/auroraboot-raw-image-328531551/recovery source to /tmp/auroraboot-raw-image-328531551/recovery-img[0m
+[90m2026-09-16T05:09:09Z[0m [32mINF[0m [1m[1] Starting rsync...[0m
+[90m2026-09-16T05:09:09Z[0m DBG [1] Running cmd: 'rsync --progress --partial --human-readable --archive --acls --exclude=/mnt --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/tmp --exclude=/host --exclude=/run /tmp/auroraboot-raw-image-328531551/recovery/ /tmp/auroraboot-raw-image-328531551/recovery-img/'
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Finished syncing[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Finished copying /tmp/auroraboot-raw-image-328531551/recovery into /tmp/auroraboot-raw-image-328531551/recovery-img[0m
+[90m2026-09-16T05:09:10Z[0m DBG [1] Unmounting image COS_RECOVERY
+[90m2026-09-16T05:09:10Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:10Z[0m DBG [1] Clearing loop device
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mCreated RECOVERY image[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mCreating BOOT image[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mCreated BOOT image[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mCreating OEM image[0m
+[90m2026-09-16T05:09:10Z[0m DBG Creating default cloud config [36mtarget=[0m/tmp/auroraboot-raw-image-328531551/oem/90_custom.yaml
+[90m2026-09-16T05:09:10Z[0m DBG calculated state partition size [36msize=[0m6000
+[90m2026-09-16T05:09:10Z[0m DBG Creating reset cloud config [36mtarget=[0m/tmp/auroraboot-raw-image-328531551/oem/01_reset.yaml
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Creating file system image /tmp/auroraboot-raw-image-328531551/oem.img with size 64MiB[0m
+[90m2026-09-16T05:09:10Z[0m DBG [1] Running cmd: 'mkfs.ext2 -L COS_OEM /tmp/auroraboot-raw-image-328531551/oem.img'
+[90m2026-09-16T05:09:10Z[0m DBG [1] Mounting image COS_OEM
+[90m2026-09-16T05:09:10Z[0m DBG Opening img file [36mimage=[0m/tmp/auroraboot-raw-image-328531551/oem.img
+[90m2026-09-16T05:09:10Z[0m DBG [1] Opening loop control device
+[90m2026-09-16T05:09:10Z[0m DBG [1] Getting free loop device
+[90m2026-09-16T05:09:10Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:10Z[0m DBG [1] Setting loop device
+[90m2026-09-16T05:09:10Z[0m DBG [1] Setting loop flags
+[90m2026-09-16T05:09:10Z[0m DBG Attached loop device [36mdevice=[0m/dev/loop0 [36mimage=[0m/tmp/auroraboot-raw-image-328531551/oem.img [36mreadOnly=[0mfalse
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Copying /tmp/auroraboot-raw-image-328531551/oem source to /tmp/auroraboot-raw-image-328531551/oem-mount[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Starting rsync...[0m
+[90m2026-09-16T05:09:10Z[0m DBG [1] Running cmd: 'rsync --progress --partial --human-readable --archive --acls --exclude=/mnt --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/tmp --exclude=/host --exclude=/run /tmp/auroraboot-raw-image-328531551/oem/ /tmp/auroraboot-raw-image-328531551/oem-mount/'
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Finished syncing[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1m[1] Finished copying /tmp/auroraboot-raw-image-328531551/oem into /tmp/auroraboot-raw-image-328531551/oem-mount[0m
+[90m2026-09-16T05:09:10Z[0m DBG [1] Unmounting image COS_OEM
+[90m2026-09-16T05:09:10Z[0m DBG Opening loop device [36mdevice=[0m/dev/loop0
+[90m2026-09-16T05:09:10Z[0m DBG [1] Clearing loop device
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mCreated OEM image[0m
+[90m2026-09-16T05:09:10Z[0m [32mINF[0m [1mAssembling final disk image[0m [36mtarget=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:10Z[0m DBG Creating disk image [36mdisk=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw [36mparts=[0m["/tmp/auroraboot-raw-image-328531551/bios.img","/tmp/auroraboot-raw-image-328531551/oem.img","/tmp/auroraboot-raw-image-328531551/recovery.img"]
+[90m2026-09-16T05:09:11Z[0m DBG Attaching file to loop device [36mbackingFile=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:11Z[0m DBG Attaching image to loop device [36moutput=[0m"/dev/loop0\n"
+[90m2026-09-16T05:09:11Z[0m DBG Running kpartx [36moutput=[0m"add map loop0p1 (252:1): 0 2048 linear 7:0 2048\nadd map loop0p2 (252:2): 0 131072 linear 7:0 4096\nadd map loop0p3 (252:3): 0 2699264 linear 7:0 135168\n"
+[90m2026-09-16T05:09:11Z[0m DBG Attached image to loop device [36mdevice=[0m/dev/loop0 [36mimage=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:11Z[0m DBG Running grub2-install [36margs=[0m["--target=i386-pc","--force","/dev/loop0","--boot-directory=/tmp/auroraboot-raw-image-328531551/recovery"]
+[90m2026-09-16T05:09:12Z[0m [32mINF[0m [1mCreated disk image[0m [36mdisk=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:12Z[0m DBG got flavor [36mflavor=[0mhadron
+[90m2026-09-16T05:09:12Z[0m DBG got model [36mmodel=[0mgeneric
+[90m2026-09-16T05:09:12Z[0m [32mINF[0m [1mAssembled final disk image[0m [36mtarget=[0m/aurora/kairos-hadron-v0.4.0-core-amd64-generic-v4.1.2.raw
+[90m2026-09-16T05:09:12Z[0m DBG Cleaning up temp rootfs directory [36mtmpRootFs=[0m/tmp/auroraboot-temp-rootfs-881f85538c50b6031fc8f4fad10070483522d4699243201c6965f6c92447af31
+[90m2026-09-16T05:09:12Z[0m DBG Cleaning up temp netboot directory [36mdstNetboot=[0m/aurora/netboot
+[90m2026-09-16T05:09:12Z[0m DBG Cleaning up config.yaml [36mconfig=[0m/aurora/config.yaml
